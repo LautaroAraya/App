@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App.Views.InicioPrincipal"
+             Title="Inicio Principal">
+
+    <Grid>
+        <Image Source="https://autotest.com.ar/wp-content/uploads/2022/01/AUTOS-MOTOS-VENTAS.jpg" Aspect="Center"></Image>
+        
+    <VerticalStackLayout Spacing="10" Margin="50,10,100,10">
+        <Label 
+    Text="Consencionaria Movil"
+    TextColor="Blue"
+    FontAttributes="Bold"
+    BackgroundColor="Black"
+    FontSize="32"
+    VerticalOptions="Center" 
+    HorizontalOptions="Center" />
+        <Grid HorizontalOptions="Center" VerticalOptions="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <!-- Fila para el primer botón -->
+                <RowDefinition Height="Auto"/>
+                <!-- Fila para el segundo botón -->
+            </Grid.RowDefinitions>
+
+            <Button
+    x:Name="MotosBtn"
+    Text="Motos "
+    Clicked="MotosBtn_Clicked"
+    Style="{StaticResource EstiloBotonDestacado}"
+    Grid.Row="0" />
+            <Button
+    x:Name="VehiculosBtn"
+    Text="Vehiculos"
+    Clicked="VehiculosBtn_Clicked"
+    Style="{StaticResource EstiloBotonDestacado}"
+    Grid.Row="1"/>
+        </Grid>
+    </VerticalStackLayout>
+    </Grid>
+</ContentPage>

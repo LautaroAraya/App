@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App.Views.Agregar"
+             Title="Agregar">
+    <ScrollView>
+        <VerticalStackLayout HorizontalOptions="Center">
+            <Label 
+            Text="AGREGAR MOTOS"
+            FontSize="36"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+            <Label>Nombre:</Label>
+            <Entry x:Name="txtNombre"></Entry>
+
+            <Label>Modelo:</Label>
+            <Entry x:Name="txtModelo"></Entry>
+
+            <Label>Velocidad Max:</Label>
+            <Entry x:Name="txtVelocidadMax"></Entry>
+
+            <Label>Precio:</Label>
+            <Entry x:Name="txtPrecio" Keyboard="Numeric"></Entry>
+
+            <Label>Url de la Imagen:</Label>
+            <Editor x:Name="txtImagenUrl"></Editor>
+
+            <Label>Marca:</Label>
+            <Entry x:Name="txtMarca"></Entry>
+
+            <Button x:Name="GuardarBtn" 
+                Text="Guardar"
+                Clicked="GuardarBtn_Clicked"
+                ></Button>
+            <Button x:Name="CancelarBtn" 
+                Text="Cancelar"
+                Clicked="CancelarBtn_Clicked"></Button>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

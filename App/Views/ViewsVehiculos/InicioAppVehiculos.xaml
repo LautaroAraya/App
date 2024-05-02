@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App.Views.ViewsVehiculos.InicioAppVehiculos">
+    <VerticalStackLayout Spacing="10" Margin="50,10,100,10">
+        <Label 
+    Text="Consencionaria Movil"
+    FontSize="32"
+    VerticalOptions="Center" 
+    HorizontalOptions="Center" />
+        <Grid HorizontalOptions="Center" VerticalOptions="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <!-- Fila para el primer botón -->
+                <RowDefinition Height="Auto"/>
+                <!-- Fila para el segundo botón -->
+                <RowDefinition Height="Auto"/>
+                <!-- Fila para el tercer botón -->
+                <RowDefinition Height="Auto"/>
+                <!-- Fila para el Cuarto botón -->
+                <RowDefinition Height="Auto"/>
+                <!-- Fila para el Quinto botón -->
+            </Grid.RowDefinitions>
+
+            <Button
+    x:Name="AgregarBtn"
+    Text="Agregar "
+    Clicked="AgregarBtn_Clicked"
+    Style="{StaticResource EstiloBotonDestacado}"
+    Grid.Row="0" />
+
+            <Button
+    x:Name="EliminarBtn"
+    Text="Eliminar "
+    Clicked="EliminarBtn_Clicked"
+    Style="{StaticResource EstiloBotonDestacado}"
+    Grid.Row="1" />
+
+            <Button
+    x:Name="EditarBtn"
+    Text="Editar "
+    Clicked="EditarBtn_Clicked"
+    Style="{StaticResource EstiloBotonDestacado}"
+    Grid.Row="2" />
+            <Button
+    x:Name="MostrarVehiculosBtn"
+    Text="Mostrar Vehiculos"
+    Clicked="GetAllVehiculos"
+    Style="{StaticResource EstiloBotonDestacado}"
+    Grid.Row="3"/>
+            <Button
+    x:Name="VolverALaPrincipalBtn"
+    Text="Volver a Inicio Principal"
+    Clicked="InicioPrincipalBtn_Clicked"
+    Style="{StaticResource EstiloBotonDestacado}"
+    Grid.Row="4"/>
+        </Grid>
+
+
+
+        <ScrollView HeightRequest="350">
+            <CollectionView x:Name="VehiculosCollectionView"
+  SelectionMode="Single">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid RowDefinitions="*,2*" ColumnDefinitions="*,2*,2*">
+                            <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="{Binding nombre}" FontSize="20"/>
+                            <Label Grid.Row="1" Grid.Column="1" Text="{Binding marca}"/>
+                            <Image Grid.Row="1" Grid.Column="2" Source="{Binding imagen_url}" Aspect="AspectFit"/>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </ScrollView>
+    </VerticalStackLayout>
+</ContentPage>
